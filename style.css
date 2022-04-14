@@ -1,0 +1,38 @@
+.bigColumn{
+    float:right;
+    width: 75%;
+    background-color: aliceblue;
+    height: 80vh;
+    border-color: black;
+} 
+
+.column{
+    text-align: center;
+    width: 25%;
+    height: 80vh;
+    background-color: rgba(255, 255, 0, 0.223);
+}
+
+.bt {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+  }
+  
+  .bt:hover {
+    background-color: #3e8e41
+  }
+  .bt:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

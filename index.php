@@ -10,7 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body>   
+    <?php
+    include('conexion.php');
+    ?>
+    
     <p></p>
     <div class="row">
         <div class="bigColumn">
@@ -29,11 +33,6 @@
             <button class="bt" onclick="chartType('pie')">Pie Chart</button>
         </div>
     </div>
-
-
-    <?php
-    include('conexion.php');
-    ?>
 
     <script>
         var ctx = document.getElementById('graficaCovid').getContext('2d');

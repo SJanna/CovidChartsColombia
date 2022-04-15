@@ -11,11 +11,7 @@
 </head>
 
 <body>   
-    <?php
-    $serverName = "tcp:graficascovidserver.database.windows.net,1433"; //serverName\instanceName
-    $connectionInfo = array( "Database"=>"graficasCovid","UID"=>"shalem", "PWD"=>"A1b2c3008205135");
-    $conn = sqlsrv_connect( $serverName, $connectionInfo);
-    ?>
+
     <p></p>
     <div class="row">
         <div class="bigColumn">
@@ -34,7 +30,11 @@
             <button class="bt" onclick="chartType('pie')">Pie Chart</button>
         </div>
     </div>
-
+    <?php
+    $serverName = "tcp:graficascovidserver.database.windows.net,1433"; //serverName\instanceName
+    $connectionInfo = array( "Database"=>"graficasCovid","UID"=>"shalem", "PWD"=>"A1b2c3008205135");
+    $conn = sqlsrv_connect( $serverName, $connectionInfo);
+    ?>
     <script>
         var ctx = document.getElementById('graficaCovid').getContext('2d');
 

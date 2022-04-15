@@ -6,40 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid Charts</title>
-    <link rel="icon" href="sources/covidFavicon.png">
+    <link rel="icon" href="sources/covidFavicon.png"><!--https://cdn-icons-png.flaticon.com/512/2913/2913465.png-->
+    <!--Estilos CSS-->
     <link rel="stylesheet" href="style.css">
+    <!--Se llama a la librería Chart.Js-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>   
-
+<body>
+    
+<?php //Se llama a la conexión con el servidor 
+    include('conexion.php');
+?>
     <p></p>
     <div class="row">
         <div class="bigColumn">
-            <canvas class="graficaCovid" id="graficaCovid">
+            <canvas class="graficaCovid" id="graficaCovid"><!--La grafica-->
         </div>
         <div class="column">
             <h1>Gráficas Covid-19 Colombia </h1>
             <!--Botones para cambiar el tipo de grafica-->
             <h3>Opciones de Ordenado</h3>
-            <button class="bt" onclick="updateChart()">Alfabético</button>
-            <button class="bt" onclick="updateChart2()">Menor a Mayor</button><br>
+            <button class="bt" onclick="ordenAlfa()">Alfabético</button>
+            <button class="bt" onclick="ordenMin_Max()">Menor a Mayor</button><br>
             <h3>Opciones de Gráfica</h3>
             <button class="bt" onclick="chartType('bar')">Bar Chart</button>
             <button class="bt" onclick="chartType('line')">Line Chart</button>
             <button class="bt" onclick="chartType('polarArea')">Polar Chart</button>
             <button class="bt" onclick="chartType('pie')">Pie Chart</button>
+            <h3>Opciones de Datos</h3>
+            <button class="bt" onclick="chartType('bar')">Bar Chart</button>
+            <button class="bt" onclick="chartType('line')">Line Chart</button>
         </div>
     </div>
-    <?php
-    $serverName = "tcp:graficascovidserver.database.windows.net,1433"; //serverName\instanceName
-    $connectionInfo = array( "Database"=>"graficasCovid","UID"=>"shalem", "PWD"=>"A1b2c3008205135");
-    $conn = sqlsrv_connect( $serverName, $connectionInfo);
-    ?>
+    <!--script de JS que genera la grafica-->
     <script>
         var ctx = document.getElementById('graficaCovid').getContext('2d');
 
-        //Funcion para el query
+        //Funcion para el query (No es necesaria del todo necesaria, permite organizar código)
         function sqlQuery() {
             var value = [
                 <?php
@@ -54,7 +58,7 @@
             return value;
         }
 
-        const etiquetas = sqlQuery();
+        const etiquetas = sqlQuery();//Se ejecuta la funcion del Query
 
         const datosTotal = {
             label: "Pruebas PCR por Departamento",
@@ -132,7 +136,8 @@
         let chart = new Chart(ctx, config);
 
 
-        function updateChart() {
+        function ordenAlfa() {//Actualiza la grafica con información nueva
+            //Orden Alfabetico
             chart.data.datasets[0].data = [
                 <?php
                 $sql = "SELECT Departamento, SUM(Total_Procesadas) AS Total FROM Pruebas_PCR_Colombia GROUP BY Departamento ORDER BY Departamento";
@@ -156,7 +161,8 @@
             chart.update();
         };
 
-        function updateChart2() {
+        function ordenMin_Max() {
+            //Menor a Mayor
             chart.data.datasets[0].data = [
                 <?php
                 $sql = "SELECT Departamento, SUM(Total_Procesadas) AS Total FROM Pruebas_PCR_Colombia GROUP BY Departamento ORDER BY Total";
@@ -180,9 +186,9 @@
             chart.update();
         };
 
-        function chartType(type) {
-            chart.destroy();
-            if (type == 'line') {
+        function chartType(type) {//Actualiza el tipo de grafico
+            chart.destroy();//Es necesario destruir el grafico que haya para que no se solape
+            if (type == 'line') {//Dependiendo del tipo de dato que venga de type se llama a una config diferente
                 chart = new Chart(ctx, config);
             }
             if (type == 'polarArea') {
@@ -198,11 +204,10 @@
             chart.update();
         };
     </script>
-    <script>
 
-    </script>
-    <!--Se cambian la grafica según el tipo (radio, barras, linea)-->
-
+<!--ATRIBUCIONES PENDIENTES
+ICONO <a href="https://www.flaticon.es/iconos-gratis/virus" title="virus iconos">Virus iconos creados por Freepik - Flaticon</a>
+    -->
 </body>
 
 </html>

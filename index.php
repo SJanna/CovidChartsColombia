@@ -12,7 +12,7 @@
 
 <body>   
     <?php
-    include('https://raw.githubusercontent.com/SJanna/CovidChartsColombia/main/conexion.php?token=GHSAT0AAAAAABTSR2BVYALNU6DVY55V4IUWYSY5YUQ');
+    include('conexion.php');
     ?>
     
     <p></p>

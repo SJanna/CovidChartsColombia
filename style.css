@@ -1,3 +1,4 @@
+/*Se definen los estilos*/
 .bigColumn{
     float:right;
     width: 75%;
@@ -35,4 +36,10 @@
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  .graficaCovid{
+    position: relative; 
+    height:80vh; 
+    width:80vw
   }

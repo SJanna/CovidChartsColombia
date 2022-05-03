@@ -19,7 +19,7 @@
     include('conexion.php');
     include('grafica_1.php');
     include('grafica_2.php');
-    //include('grafica_2.php');
+    include('grafica_3.php');
     ?>
   
     <!--Grafica 1-->

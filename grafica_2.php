@@ -1,24 +1,16 @@
-<!-- <div class="row">
-  <div class="bigColumn">
-    <canvas class="graficaCovid" id="graficaCovid2">
-  </div>
-  <div class="column">
-    <h1>Gráficas Covid-19 Colombia </h1> -->
-    <!--Botones para cambiar el tipo de grafica-->
-    <!-- <h3>Opciones de Gráfica</h3>
-    <button class="bt" onclick="genero2('Hombres')">Hombres</button>
-    <button class="bt" onclick="genero2('Mujeres')">Mujeres</button>
-    <button class="bt" onclick="genero2('Ambos')">Ambos</button><br>
-</div> -->
 <script>
+  <?php include('recuperados_query.php')?>;
+  const R_Edad_query=[ <?php echo $R_Edad_query?> ];
+  const RecuperadosR_query=[ <?php echo $RecuperadosR_query?> ];
+  const RecuperadosF_query=[ <?php echo $RecuperadosF_query?> ];
   const ctx2 = document.getElementById('graficaCovid2').getContext('2d');
   const myChart2 = new Chart(ctx2, {
     data: {
-        labels: [<?php include('recuperados_query.php'); echo $R_Edad_query ?>],
+        labels: R_Edad_query,
         datasets: [{
             type: 'line',
             label: 'Recuperados',
-            data: [<?php include('recuperados_query.php'); echo $RecuperadosR_query ?>],
+            data: RecuperadosR_query,
             backgroundColor: [
                 'rgba(10, 220, 30, 0.2)'
             ],
@@ -30,7 +22,7 @@
       {
         type: 'line',
         label: 'Recuperados',
-            data: [<?php include('recuperados_query.php'); echo $RecuperadosR_query ?>],
+            data: RecuperadosR_query,
             backgroundColor: [
                 'rgba(100, 50, 150, 0.2)'
             ],
@@ -53,23 +45,22 @@
 
 function genero2(str) {
     if(str=='Recuperados'){
-    myChart2.data.datasets[0].data = [<?php include('recuperados_query.php'); echo $RecuperadosR_query ?>];
+    myChart2.data.datasets[0].data = RecuperadosR_query;
     myChart2.data.datasets[0].label='Recuperados';
-    myChart2.data.datasets[1].data = [<?php include('recuperados_query.php'); echo $RecuperadosR_query ?>];
+    myChart2.data.datasets[1].data = RecuperadosR_query;
     myChart2.data.datasets[1].label='Recuperados';
   }else if(str=='Fallecidos'){
-    myChart2.data.datasets[0].data = [<?php include('recuperados_query.php'); echo $RecuperadosF_query ?>];
+    myChart2.data.datasets[0].data = RecuperadosF_query;
     myChart2.data.datasets[0].label='Fallecidos';
-    myChart2.data.datasets[1].data = [<?php include('recuperados_query.php'); echo $RecuperadosF_query ?>];
+    myChart2.data.datasets[1].data = RecuperadosF_query;
     myChart2.data.datasets[1].label='Fallecidos';
   }else if (str=='Ambos'){
-    myChart2.data.datasets[1].data = [<?php include('recuperados_query.php'); echo $RecuperadosR_query ?>];
+    myChart2.data.datasets[1].data = RecuperadosR_query;
     myChart2.data.datasets[1].label='Recuperados';
-    myChart2.data.datasets[0].data = [<?php include('recuperados_query.php'); echo $RecuperadosF_query ?>];
+    myChart2.data.datasets[0].data = RecuperadosF_query;
     myChart2.data.datasets[0].label='Fallecidos';
   }
-  myChart2.data.labels =
-  [<?php include('recuperados_query.php'); echo $R_Edad_query ?>];     
+  myChart2.data.labels = R_Edad_query;     
   myChart2.update();
 }
 </script>

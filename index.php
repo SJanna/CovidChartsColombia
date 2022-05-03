@@ -17,9 +17,6 @@
 <body>
     <?php //Se llama a la conexión con el servidor 
     include('conexion.php');
-    //include('grafica_1.php');
-    //include('grafica_2.php');
-    //include('grafica_2.php');
     ?>
     <header>
         <a href="#" class="logo">Covid Dataset Colombia<span>.</span></a>
@@ -32,7 +29,6 @@
             <li><a href="#DeathsAndRecoveredsByGender">Deaths And Recovereds By Gender</a></li>
         </ul>
     </header>
-
 
     <section class="banner" id="banner">
         <div class="content">
@@ -47,6 +43,9 @@
             <div class="col50">
                 <h2 class="titleText"><span>C</span>ases by gender</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non hic quos commodi eligendi. Nihil, voluptates ducimus. Non sed a quo dolorem nostrum quod recusandae placeat, deserunt corporis, amet repellendus.</p>
+                <button class="btn" onclick="genero('Hombres')">Hombres</button>
+                <button class="btn" onclick="genero('Mujeres')">Mujeres</button>
+                <button class="btn" onclick="genero('Ambos')">Ambos</button><br>
             </div>
             <div class="col50">
                 <div class="imgBx">
@@ -56,9 +55,6 @@
                         include("grafica_1.php");
                         ?>
                 </div>
-                <button class="btn" onclick="genero('Hombres')">Hombres</button>
-                <button class="btn" onclick="genero('Mujeres')">Mujeres</button>
-                <button class="btn" onclick="genero('Ambos')">Ambos</button><br>
             </div>
         </div>
     </section>
@@ -74,15 +70,14 @@
                         include("grafica_2.php");
                         ?>
                 </div>
-                <button class="btn" onclick="genero2('Recuperados')">Recuperados</button>
-                <button class="btn" onclick="genero2('Fallecidos')">Fallecidos</button>
-                <button class="btn" onclick="genero2('Ambos')">Ambos</button>
             </div>
 
             <div class="col50">
                 <h2 class="titleText"><span>D</span>eaths/Recovereds</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non hic quos commodi eligendi. Nihil, voluptates ducimus. Non sed a quo dolorem nostrum quod recusandae placeat, deserunt corporis, amet repellendus.</p>
-
+                <button class="btn" onclick="genero2('Recuperados')">Recuperados</button>
+                <button class="btn" onclick="genero2('Fallecidos')">Fallecidos</button>
+                <button class="btn" onclick="genero2('Ambos')">Ambos</button>
             </div>
         </div>
     </section>
@@ -92,19 +87,19 @@
             <div class="col50">
                 <h2 class="titleText"><span>P</span>cr Tests</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non hic quos commodi eligendi. Nihil, voluptates ducimus. Non sed a quo dolorem nostrum quod recusandae placeat, deserunt corporis, amet repellendus.</p>
+                <button class="btn" onclick="chartType('line')">Line</button>
+                <button class="btn" onclick="chartType('bar')">Bar</button>
+                <button class="btn" onclick="chartType('pie')">Pie</button><br>
+                <button class="btn" onclick="chartType('doughnut')">doughnut</button>
             </div>
             <div class="col50">
-                <div class="imgBx">
+                <div class="imgBx" id="g3">
                     <!-- <img src="sources/grafico_coronavirus_1.jpg"> -->
                     <canvas class="graficaCovid" id="graficaCovid3">
                         <?php
                         include("grafica_3.php");
                         ?>
                 </div>
-                <button class="btn" onclick="chartType('line')">Line</button>
-                <button class="btn" onclick="chartType('bar')">Bar</button>
-                <button class="btn" onclick="chartType('pie')">Pie</button><br>
-                <button class="btn" onclick="chartType('doughnut')">doughnut</button>
             </div>
         </div>
     </section>
@@ -119,14 +114,14 @@
                         include("grafica_4.php");
                         ?>
                 </div>
-                <button class="btn" onclick="Recuperado('Recuperados')">Recuperados</button>
-                <button class="btn" onclick="Recuperado('Fallecidos')">Fallecidos</button>
-                <button class="btn" onclick="Recuperado('Ambos')">Ambos</button>
             </div>
 
             <div class="col50">
                 <h2 class="titleText"><span>D</span>eaths/Recovereds</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non hic quos commodi eligendi. Nihil, voluptates ducimus. Non sed a quo dolorem nostrum quod recusandae placeat, deserunt corporis, amet repellendus.</p>
+                <button class="btn" onclick="Recuperado('Recuperados')">Recuperados</button>
+                <button class="btn" onclick="Recuperado('Fallecidos')">Fallecidos</button>
+                <button class="btn" onclick="Recuperado('Ambos')">Ambos</button>
             </div>
         </div>
     </section>
@@ -148,31 +143,5 @@
             navigation.classList.toggle('active');
         }
     </script>
-
-    <!--Grafica 1-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--ATRIBUCIONES PENDIENTES
-ICONO <a href="https://www.flaticon.es/iconos-gratis/virus" title="virus iconos">Virus iconos creados por Freepik - Flaticon</a>
-    -->
-
-
 </body>
-
 </html>

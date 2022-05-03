@@ -1,16 +1,3 @@
-<!-- <div class="row">
-  <div class="bigColumn">
-    <canvas class="graficaCovid" id="graficaCovid3">
-  </div>
-  <div class="column">
-    <h1>Pruebas Covid</h1> -->
-    <!--Botones para cambiar el tipo de grafica-->
-    <!-- <h3>Opciones de Gráfica</h3>
-    <button class="bt" onclick="chartType('line')">Line</button>
-    <button class="bt" onclick="chartType('bar')">Bar</button>
-    <button class="bt" onclick="chartType('pie')">Pie</button><br>
-    <button class="bt" onclick="chartType('doughnut')">doughnut</button><br>
-</div> -->
 <script>
   const chartLabels = [<?php include('pcr_query.php'); echo $pcr_dep_query ?>];
   const chartData = [<?php include('pcr_query.php'); echo $pcr_total_query ?>];
@@ -126,7 +113,7 @@ const config4 = {
     }
 }
 
-let myChart3 = new Chart(ctx3, config4); 
+let myChart3 = new Chart(ctx3, config); 
 
 function chartType(type) { //Actualiza el tipo de grafico
   myChart3.destroy(); //Es necesario destruir el grafico que haya para que no se solape

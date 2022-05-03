@@ -1,6 +1,6 @@
 <?php
-$serverName = "tcp:graficascovidserver.database.windows.net"; //serverName\instanceName
-$connectionInfo = array( "Database"=>"graficasCovid", "UID"=>"shalem", "PWD"=>"A1b2c3008205135");
+$serverName = "DESKTOP-UM4N2C7"; //serverName\instanceName
+$connectionInfo = array( "Database"=>"graficasCovid", "UID"=>"sa", "PWD"=>"123456789");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 if( $conn ) {
      //echo "Conexión establecida.<br />";

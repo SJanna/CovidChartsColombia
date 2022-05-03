@@ -1,15 +1,15 @@
-<div class="row">
-  <div class="bigColumn">
-    <canvas class="graficaCovid" id="graficaCovid">
-  </div>
-  <div class="column">
-    <h1>Gráficas Covid-19 Colombia </h1>
+<!-- <div class="row"> -->
+  <!-- <div class="bigColumn"> -->
+  <!-- <canvas class="graficaCovid" id="graficaCovid"> -->
+  <!-- </div> -->
+  <!-- <div class="column"> -->
+    <!-- <h1>Gráficas Covid-19 Colombia </h1> -->
     <!--Botones para cambiar el tipo de grafica-->
-    <h3>Opciones de Gráfica</h3>
+    <!-- <h3>Opciones de Gráfica</h3>
     <button class="bt" onclick="genero('Hombres')">Hombres</button>
     <button class="bt" onclick="genero('Mujeres')">Mujeres</button>
-    <button class="bt" onclick="genero('Ambos')">Ambos</button><br>
-</div>
+    <button class="bt" onclick="genero('Ambos')">Ambos</button><br> -->
+<!-- </div> -->
 
 <script>
   

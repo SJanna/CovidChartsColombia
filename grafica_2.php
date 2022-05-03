@@ -1,15 +1,15 @@
-<div class="row">
+<!-- <div class="row">
   <div class="bigColumn">
     <canvas class="graficaCovid" id="graficaCovid2">
   </div>
   <div class="column">
-    <h1>Gráficas Covid-19 Colombia </h1>
+    <h1>Gráficas Covid-19 Colombia </h1> -->
     <!--Botones para cambiar el tipo de grafica-->
-    <h3>Opciones de Gráfica</h3>
+    <!-- <h3>Opciones de Gráfica</h3>
     <button class="bt" onclick="genero2('Hombres')">Hombres</button>
     <button class="bt" onclick="genero2('Mujeres')">Mujeres</button>
     <button class="bt" onclick="genero2('Ambos')">Ambos</button><br>
-</div>
+</div> -->
 <script>
   const ctx2 = document.getElementById('graficaCovid2').getContext('2d');
   const myChart2 = new Chart(ctx2, {

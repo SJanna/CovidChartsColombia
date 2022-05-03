@@ -1,6 +1,6 @@
 <?php
-require('../vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable('../');
+require('vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable('./');
 $dotenv->load();
 $SNAME=$_ENV['SNAME'];
 $DB=$_ENV['DB'];

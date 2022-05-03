@@ -1,2 +1,0 @@
-# Ignora la conexion
-/conexion.php

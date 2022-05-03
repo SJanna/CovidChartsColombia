@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-weight: 300;
+  color: #111;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(sources/covid_background.jpg);
+  background-size: cover;
+}
+
+.banner .content
+{
+  max-width: 900px;
+  text-align: center;
+}
+
+.banner .content h2
+{
+  font-size: 5em;
+  color: #fff;
+}
+
+.banner .content p
+{
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.btn
+{
+  font-size: 1em;
+  color: #fff;
+  background: #ff0157;
+  display: inline-block;
+  padding: 7px 25px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+
+.col50 .btn
+{
+  margin-left: 13px;
+  margin-right: 13px;
+}
+
+.btn:hover /*Change the style of a button when you move the mouse over it.*/
+{
+  letter-spacing: 6px;
+}
+
+header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+header .logo
+{
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+header.sticky
+{
+  background: #fff;
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header.sticky .logo
+{
+  color: #111;
+}
+
+header.logo span
+{
+  color: #ff0157;
+}
+
+header .navigation
+{
+  position: relative;
+  display: flex;
+}
+
+header .navigation li
+{
+  list-style: none;
+  margin-left: 30px;
+}
+
+header .navigation li a
+{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+
+header.sticky .navigation li a
+{
+  color: #111;
+}
+
+header .navigation li a:hover
+{
+  color: #ff0157;
+}
+
+section
+{
+  padding: 100px;
+}
+
+.row
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row .col50
+{
+  position: relative;
+  width: 48%;
+}
+
+.titleText
+{
+  color: #111;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.titleText span
+{
+  color: #111;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+/* imgBx: Espacio Gráfica 1 */
+.row .col50 .imgBx
+{
+  position: relative;
+  width: 100%;
+  /* min-height: 300px; */
+  height: 100%;
+}
+
+/*Espacio de la gráfica*/
+.row .col50 .imgBx img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width:991px)
+{
+  header,
+  header.sticky
+  {
+    padding: 10px 20px;
+  }
+
+  header .navigation
+  {
+    display: none;
+  }
+
+  header .navigation.active
+  {
+    width: 100%;
+    height: calc(100%-68px);
+    /* height: 100%; */
+    position: fixed;
+    top: 68px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff ;
+  }
+
+  header .navigation li
+  {
+    margin-left: 0;
+  }
+
+  header .navigation li a
+  {
+    color: #111;
+    font-size: 1.6em;
+  }
+
+  .menuToggle
+  {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(sources/menu.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .menuToggle.active
+  {
+    background: url(sources/close.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  header.sticky .menuToggle
+  {
+    filter: invert(1);
+  }
+
+  section 
+  {
+    padding: 20px;
+  }
+
+  .banner .content h2 
+  {
+    font-size: 3em;
+    color: #fff;
+  }
+
+  /* Changes the position of the table to under the text */
+  .row
+  {
+    flex-direction: column;
+  }
+
+  .row .col50
+  {
+    position: relative;
+    width: 100%;
+  }
+
+  .row .col50 .imgBx
+  {
+    height: 300px;
+    margin-top: 20px;
+  }  
+
+  .menu .content
+  {
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 480px)
+{
+  .banner .content
+  {
+    font-size: 2.2em;
+    color: #fff;
+  }
+}
+
+
+
+  
+
+
+/*Se definen los estilos----------------------------*/
+.bigColumn {
+  float: right;
+  width: 75%;
+  background-color: aliceblue;
+  height: 80vh;
+  border-color: black;
+}
+
+.column {
+  text-align: center;
+  width: 25%;
+  height: 80vh;
+  background-color: rgba(255, 255, 0, 0.223);
+}
+
+.bt {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.bt:hover {
+  background-color: #3e8e41
+}
+
+.bt:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.graficaCovid {
+  position: relative;
+  height: 80vh;
+  width: 80vw
+}

@@ -74,8 +74,8 @@
                         include("grafica_2.php");
                         ?>
                 </div>
-                <button class="btn" onclick="genero2('Hombres')">Hombres</button>
-                <button class="btn" onclick="genero2('Mujeres')">Mujeres</button>
+                <button class="btn" onclick="genero2('Recuperados')">Recuperados</button>
+                <button class="btn" onclick="genero2('Fallecidos')">Fallecidos</button>
                 <button class="btn" onclick="genero2('Ambos')">Ambos</button>
             </div>
 

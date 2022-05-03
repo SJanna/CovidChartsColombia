@@ -1,4 +1,4 @@
 .env
-./vendor
-.json
-.lock
+/vendor
+*.json
+*.lock

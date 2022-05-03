@@ -1,9 +1,8 @@
 <?php
 include('conexion.php');
-$generoH_query='';
-$generoM_query=''; 
-$dep_query='';
-$sql = "SELECT* FROM Hombres_y_Mujeres";//Verificar exactamente dónde podemos usar el ? dentro del query
+$pcr_dep_query='';
+$pcr_total_query='';
+$sql = "SELECT * FROM pcrDepartamento ORDER BY Departamento";
 if ($stmt = sqlsrv_prepare($conn, $sql)) {
     //echo "Statement prepared.\n";  
 } else {  
@@ -17,9 +16,8 @@ if (sqlsrv_execute($stmt)) {
     die(print_r(sqlsrv_errors(), true));  
 }  
 while ($row=sqlsrv_fetch_array($stmt)) {
-    $generoH_query=$generoH_query.'"'. $row["Hombres"].'",';
-    $generoM_query=$generoM_query.'"'. $row["Mujeres"].'",';
-    $dep_query=$dep_query.'"'. $row['Nombre departamento'].'",';
+    $pcr_dep_query=$pcr_dep_query.'"'. $row["Departamento"].'",';
+    $pcr_total_query=$pcr_total_query.'"'. $row["PCR"].'",';
 }
 sqlsrv_free_stmt($stmt);  
 sqlsrv_close($conn);  

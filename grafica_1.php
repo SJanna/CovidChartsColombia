@@ -16,7 +16,7 @@
   const ctx = document.getElementById('graficaCovid').getContext('2d');
   const myChart = new Chart(ctx, {
     data: {
-        labels: [<?php include('dep_query.php'); echo $dep_query ?>],
+        labels: [<?php include('genero_query.php'); echo $dep_query ?>],
         datasets: [{
             type: 'bar',
             label: 'Casos de Hombres',
@@ -30,9 +30,9 @@
             borderWidth: 1
         },
       {
-        type: 'line',
-        label: 'Casos de Hombres',
-            data: [<?php include('genero_query.php'); echo $generoH_query ?>],
+          type: 'line',
+          label: 'Casos de Mujeres',
+            data: [<?php include('genero_query.php'); echo $generoM_query ?>],
             backgroundColor: [
                 'rgba(100, 50, 150, 0.2)'
             ],
@@ -43,6 +43,8 @@
       }]
     },
     options: {
+      // responsive: true,
+      // maintainAspectRatio: false,
         scales: {
             y: {
                 beginAtZero: true
@@ -52,20 +54,18 @@
 });
 
 function genero(str) {
+  myChart.clear();  
     if(str=='Mujeres'){
     myChart.data.datasets[0].data = [<?php include('genero_query.php'); echo $generoM_query ?>];
     myChart.data.datasets[0].label='Casos de Mujeres';
-    //myChart.datasets[0].config.type='bar';
     myChart.data.datasets[1].data = [<?php include('genero_query.php'); echo $generoM_query ?>];
     myChart.data.datasets[1].label='Casos de Mujeres';
-    //myChart.datasets[1].config.type='line';
   }else if(str=='Hombres'){
     myChart.data.datasets[0].data = [<?php include('genero_query.php'); echo $generoH_query ?>];
     myChart.data.datasets[0].label='Casos de Hombres';
     myChart.config.type='bar';
     myChart.data.datasets[1].data = [<?php include('genero_query.php'); echo $generoH_query ?>];
     myChart.data.datasets[1].label='Casos de Hombres';
-    myChart.config.type='line';
   }else if (str=='Ambos'){
     myChart.data.datasets[1].data = [<?php include('genero_query.php'); echo $generoH_query ?>];
     myChart.data.datasets[1].label='Casos de Hombres';
@@ -73,7 +73,7 @@ function genero(str) {
     myChart.data.datasets[0].label='Casos de Mujeres';
   }
   myChart.data.labels =
-  [<?php include('dep_query.php'); echo $dep_query ?>];       
+  [<?php include('genero_query.php'); echo $dep_query ?>];      
   myChart.update();
 }
 </script>

@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'graficasCovid'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA947770F66A4A8C97109A8D5821262B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_261BE2EDAF3246B9AB4C0E88F70C3E8C }}
           package: .

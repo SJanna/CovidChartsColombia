@@ -3,3 +3,5 @@
 composer
 *.json
 *.lock
+# Local Netlify folder
+.netlify
